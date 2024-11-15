@@ -1,0 +1,106 @@
+Minimum spanning tree => A connected subgraph 'S' of graph G(V<E) is said to be spanning tree if and only if 
+1. 's' should contain all vertices of 'G'
+2. 's' should contain (V-1) Edges .
+
+1--> Kruskal Algorithm for Minimum cost spanning tree .
+
+A <- o
+for each vertices V (- V[G]
+            do MAKESET (V)
+sort the edge into non decreasing order by weight .
+for each edge (u,v) (- E[G]
+                do if FINDSET U != FINDSET V 
+                then A <- A U {(U,V)} 
+                union (u,V)
+
+
+
+2--> Prims Algorithm for Minimum cost spannig tree .
+
+for each vertices u (- V(G)
+            do key(u) <- infinity
+            pie (u) <- nill
+key(r) <- 0
+Q <- v[G]
+while (Q!=0)
+            do u <- extract min Q
+            for each vertices V (- Adj(u)
+            do if V (- Q and W[u,V] < key V
+                    then  pie (v) <- U
+                     key(V) <- w[u,v]
+
+
+3--> Dijkastra Algorithm in which all the edge weight are non negative .
+INITILIZE SINGLE SOURCE (G,s)
+S <- 0
+Q <- V[G]
+while (Q ! = 0)
+        do u <- extract min Q
+        s <- s u (u)
+        for each vertices v (- Adj[u]
+        do Relax(u,v,w)
+
+INITILIZE SINGLE SOURCE
+for each vertices v (- v[G]
+        do d[v] <- infinity
+        pie [v]<- nill
+d{s}<-0
+
+do Relax(u,v,w)
+if d[v]> d[u]+w(u,v)
+   then d[v] <- d[u]+w(u,v)
+      pie[v] <- u
+
+
+4--> Warshalls Algorithm all pair sortest path
+
+n <- rows[w]
+D^0 <- w
+for k <- 1 to n  // D^ (1 to n) for matrix
+        do for i <- 1 to n  // for row
+                do for j <- 1 to n  // for column
+                do dij^k  <- min{ dij^k-1 , dik^k-1, dkj^k-1}
+
+return D^n // return final matrix
+
+5--> Bellman ford Algorithm for single source sortest path
+
+INITILIZE SINGLE SOURCE (G,S)
+for i <- 1 to | v[G] -1 |
+    do for each edge (u,v) (- E[G]
+     do Relax(u,v,w)
+for each edge (u,v) (- E[G] 
+       do if d[v]> d[u]+w(u,v)
+              return false
+return true
+
+INITILIZE SINGLE SOURCE
+for each vertices v (- v[G]
+        do d[v] <- infinity
+        pie [v]<- nill
+d{s}<-0
+
+do Relax(u,v,w)
+if d[v]> d[u]+w(u,v)
+   then d[v] <- d[u]+w(u,v)
+      pie[v] <- u
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
